@@ -1,0 +1,149 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo dinámico RGB */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #ffe600, #ff6b6b, #00c3ff, #6effa0, #ffe600);
+  background-size: 1000% 1000%;
+  animation: rgbBG 20s ease infinite;
+  color: #222;
+  text-align: center;
+  padding: 20px;
+}
+
+@keyframes rgbBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Encabezado */
+header {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 12px;
+  color: #fff;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+
+/* Tarjetas contenedor */
+.mural {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Tarjetas animadas */
+.tarjeta {
+  width: 300px;
+  background: linear-gradient(135deg, #ffffff, #e3f2fd);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.tarjeta:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tarjeta h2 {
+  background: linear-gradient(to right, #ffc107, #ff3d00);
+  color: white;
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+.tarjeta p {
+  padding: 15px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* Música */
+.musica {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px 20px;
+  border-radius: 15px;
+  margin-top: 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.musica h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #b71c1c;
+}
+
+.cancion {
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+}
+
+.cancion:hover {
+  transform: scale(1.05);
+}
+
+.cancion p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #0d47a1;
+}
+
+iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  margin-top: 40px;
+  color: white;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mural {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta {
+    width: 90%;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+
